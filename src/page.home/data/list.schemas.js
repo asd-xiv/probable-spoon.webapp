@@ -3,7 +3,7 @@ const debug = require("debug")("probable-spoon:Home.SchemasList")
 import { buildList } from "@asd14/state-list"
 import {
   findWith,
-  updateWith,
+  upsertWith,
   update,
   when,
   pipeP,
@@ -15,24 +15,25 @@ import localforage from "localforage"
 
 const SCHEMAS_NAMESPACE = "HOME.SCHEMAS"
 
+// localforage.setItem(SCHEMAS_NAMESPACE, [{ id: "1", schema: "{}" }])
+
 export const SchemasList = buildList({
   name: SCHEMAS_NAMESPACE,
 
   read: () =>
     pipeP(
-      source => localforage.getItem(source),
+      () => localforage.getItem(SCHEMAS_NAMESPACE),
       when(isEmpty, same([{ id: "1", schema: "{}" }]))
-    )(SCHEMAS_NAMESPACE),
+    )(),
 
   update: async (id, { tableId, schema, coordinates }) => {
     const items = await pipeP(
-      source => localforage.getItem(source),
+      () => localforage.getItem(SCHEMAS_NAMESPACE),
       when(isEmpty, same([])),
-      updateWith(
+      upsertWith(
+        { id },
         {
           id,
-        },
-        {
           schema: (source = "") => (is(schema) ? schema : source),
           coordinates: (source = {}) =>
             is(coordinates)
@@ -40,7 +41,7 @@ export const SchemasList = buildList({
               : source,
         }
       )
-    )(SCHEMAS_NAMESPACE)
+    )()
 
     await localforage.setItem(SCHEMAS_NAMESPACE, items)
 

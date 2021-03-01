@@ -19,7 +19,7 @@
     "----UTIL": "",
     "setup:clean": "rm -rf ./node_modules",
     "setup": "npm run setup:clean && npm i && npm audit fix",
-    "setup:ci": "npm ci && npm audit fix",
+    "setup:ci": "npm ci --dev && npm audit fix",
     "update": "npm-check --update",
     "update-force": "npm-check --update-all",
     "----DEV": "",

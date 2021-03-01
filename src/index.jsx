@@ -31,5 +31,5 @@ render(
 
 // activate debug logging when in development
 if (process.env.NODE_ENV !== "production") {
-  localStorage.setItem("debug", "probable-spoon:*,JustAList:*")
+  localStorage.setItem("debug", "probable-spoon:*,state-list:*")
 }

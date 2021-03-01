@@ -1,0 +1,63 @@
+.divider {
+  color: var(--color-yellow);
+}
+
+.table {
+  position: absolute;
+
+  display: inline-block;
+
+  padding: calc(var(--distancer) - 2px);
+
+  cursor: move;
+  user-select: none;
+
+  border: 1px solid var(--color-unfocused);
+  background-color: var(--color-bg);
+}
+
+.table--has-focus {
+  border: 1px solid var(--color-focused);
+  border-radius: var(--radius);
+}
+
+.name {
+  color: var(--color-fg);
+
+  font-weight: bold;
+}
+
+.input--main,
+.output--main {
+  position: absolute;
+
+  width: var(--distancer);
+  height: var(--distancer);
+
+  cursor: pointer;
+
+  border: 1px solid var(--color-unfocused);
+  border-radius: var(--radius);
+  background-color: var(--color-bg);
+}
+
+.input--main {
+  left: calc(-1 * var(--distancer) / 2);
+}
+
+.output--main {
+  right: calc(-1 * var(--distancer) / 2);
+}
+
+.table--has-focus .input--main,
+.table--has-focus .output--main {
+  border: 1px solid var(--color-focused);
+}
+
+.input--active,
+.input--main:hover,
+.output--active,
+.output--main:hover {
+  border: 1px solid var(--color-gray);
+  background-color: var(--color-gray);
+}

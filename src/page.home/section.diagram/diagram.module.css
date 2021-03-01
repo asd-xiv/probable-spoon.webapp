@@ -1,0 +1,48 @@
+.diagram-grid {
+  --gridGroupSize: calc(14 * var(--unit));
+
+  position: relative;
+
+  overflow: hidden;
+
+  height: 100%;
+
+  background-image:
+    linear-gradient(var(--color-bg2) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-bg2) 1px, transparent 1px),
+    linear-gradient(var(--color-bg1) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-bg1) 1px, transparent 1px);
+
+  background-position:
+    -1px -1px,
+    -1px -1px,
+    -1px -1px,
+    -1px -1px;
+
+  background-size:
+    var(--gridGroupSize) var(--gridGroupSize),
+    var(--gridGroupSize) var(--gridGroupSize),
+    var(--unit) var(--unit),
+    var(--unit) var(--unit);
+}
+
+:global(.bi.bi-diagram) {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+:global(.bi.bi-diagram .bi-link-canvas-layer .bi-diagram-link .bi-link-path) {
+  stroke: var(--color-blue);
+  stroke-width: 3px;
+}
+
+:global(.bi.bi-diagram .bi-link-canvas-layer .bi-diagram-link .bi-diagram-link-label) {
+  color: var(--color-fg);
+  border: 2px solid var(--color-blue);
+  background-color: var(--color-bg);
+}
+
+:global(.bi.bi-diagram .bi-link-canvas-layer .bi-diagram-link:hover .bi-link-path) {
+  stroke: var(--color-blue2);
+}

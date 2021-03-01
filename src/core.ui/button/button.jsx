@@ -1,11 +1,11 @@
-const debug = require("debug")("asd14:UIButton")
+const debug = require("debug")("probable-spoon:UIButton")
 
 import * as React from "react"
 import PropTypes from "prop-types"
 import cx from "classnames"
 import { is } from "@asd14/m"
 
-import css from "./button.css"
+import css from "./button.module.css"
 
 const UIButton = ({
   className,

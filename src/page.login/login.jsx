@@ -1,9 +1,9 @@
-const debug = require("debug")("asd14:LoginPage")
+const debug = require("debug")("probable-spoon:LoginPage")
 
 import React from "react"
-import { isEmpty } from "@asd14/m"
 import { useHistory } from "react-router-dom"
-import { useQuery, useAuth } from "@asd14/react-hooks"
+import { isEmpty } from "@asd14/m"
+import { useAuth, useQuery } from "@asd14/react-hooks"
 
 import { getPath } from "core.libs/routes"
 

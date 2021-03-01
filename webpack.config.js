@@ -4,8 +4,9 @@ const path = require("path")
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 const Dotenv = require("dotenv-webpack")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const CopyPlugin = require("copy-webpack-plugin")
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin")
+const CopyPlugin = require("copy-webpack-plugin")
+const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin")
 
 const IS_PROD = process.env.NODE_ENV === "production"
 
@@ -91,6 +92,7 @@ const config = {
     ...(IS_PROD ? [] : [new ReactRefreshWebpackPlugin()]),
 
     new HtmlWebPackPlugin({
+      favicon: "public/spoon.png",
       template: "public/index.html",
     }),
 
@@ -109,6 +111,10 @@ const config = {
           to: "robots.txt",
         },
       ],
+    }),
+
+    new MonacoWebpackPlugin({
+      languages: ["javascript", "json"],
     }),
   ],
 
@@ -129,6 +135,7 @@ const config = {
       "react-redux": path.resolve("./node_modules/react-redux"),
       "react-router-dom": path.resolve("./node_modules/react-router-dom"),
 
+      // Application shortcuts
       "core.ui": path.resolve("./src/core.ui/"),
       "core.libs": path.resolve("./src/core.libs/"),
       "layout.base": path.resolve("./src/layout.base/"),

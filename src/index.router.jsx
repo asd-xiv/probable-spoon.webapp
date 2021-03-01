@@ -1,4 +1,4 @@
-const debug = require("debug")("asd14:AppRouter")
+const debug = require("debug")("probable-spoon:AppRouter")
 
 import React from "react"
 import { BrowserRouter, Switch } from "react-router-dom"

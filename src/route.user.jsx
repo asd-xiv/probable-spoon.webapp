@@ -1,9 +1,8 @@
-const debug = require("debug")("asd14:UserRoute")
+const debug = require("debug")("probable-spoon:UserRoute")
 
 import React from "react"
 import PropTypes from "prop-types"
 import { Route, Redirect } from "react-router-dom"
-
 import { useAuth } from "@asd14/react-hooks"
 
 import { BaseLayout } from "./layout.base/base"
@@ -15,11 +14,11 @@ import { UserLayout } from "./layout.user/user"
  * Tip: Use Route to check authentication, Layout or Page components for
  * authorization
  *
- * @param {string}     path         Route path
- * @param {string}     redirectPath Redirect if JWT is not present and
- * @param {string}     profile      Switch to profile if route accessed
- * @param {React.Node} component    What to render
- * @param {boolean}    hasLayout    Will not use dedicated User layout
+ * @param   {string}            path         Route path
+ * @param   {string}            redirectPath Redirect if JWT is not present and
+ * @param   {string}            profile      Switch to profile if route accessed
+ * @param   {React.Node}        component    What to render
+ * @param   {boolean}           hasLayout    Will not use dedicated User layout
  *
  * @returns {ReactRouter.Route}
  **/

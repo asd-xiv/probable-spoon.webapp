@@ -1,11 +1,12 @@
 <!-- markdownlint-disable line-length -->
 
-# tpl-react
+# probable-spoon
+
+> Data flow from one transition to another.
 
 <!-- vim-markdown-toc GFM -->
 
 * [Stack](#stack)
-* [Environment variables](#environment-variables)
 * [Changelog](#changelog)
 
 <!-- vim-markdown-toc -->
@@ -24,11 +25,6 @@
 * Query string parsing: [qs](https://github.com/ljharb/qs)
 * DateTime handling: [luxon](https://github.com/moment/luxon)
 
-## Environment variables
-
-* `API_URL` - prefix request path in [`core/http.lib.js`](src/core/http.lib.js)
-* `SOCKET_URL` - socket.io connection string in [`useList`](src/core/use-list.js) hook
-
 ## Changelog
 
-See the [releases section](https://github.com/andreidmt/tpl-react/releases) for details.
+See the [releases section](https://github.com/asd-xiv/probable-spoon-webapp/releases) for details.

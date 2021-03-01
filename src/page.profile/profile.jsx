@@ -1,4 +1,4 @@
-const debug = require("debug")("asd14:ProfilePage")
+const debug = require("debug")("probable-spoon:ProfilePage")
 
 import React from "react"
 

@@ -1,4 +1,4 @@
-const debug = require("debug")("asd14:RoutesLib")
+const debug = require("debug")("probable-spoon:RoutesLib")
 
 import { compile } from "path-to-regexp"
 import { reduce, pipe, split, last, get, when, is, isEmpty } from "@asd14/m"

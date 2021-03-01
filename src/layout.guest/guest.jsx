@@ -1,18 +1,16 @@
-const debug = require("debug")("asd14:GuestLayout")
+const debug = require("debug")("probable-spoon:GuestLayout")
 
 import React from "react"
 import PropTypes from "prop-types"
 
 import { BaseLayout } from "layout.base/base"
 
-import css from "./guest.module.css"
+// import css from "./guest.module.css"
 
 const GuestLayout = ({ children }) => {
   return (
     <BaseLayout>
-      <div className={css["guest-layout"]}>
-        <div>{children}</div>
-      </div>
+      <div>{children}</div>
     </BaseLayout>
   )
 }

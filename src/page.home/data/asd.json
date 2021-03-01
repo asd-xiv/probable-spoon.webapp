@@ -1,0 +1,135 @@
+[
+  {
+    "id": "1",
+    "name": "Content",
+    "schema": {
+      "activities": {
+        "id": "string",
+        "title": "string",
+        "description": "string"
+      },
+      "itineraries": {
+        "id":"string",
+        "title":"string",
+        "description":"string",
+        "type":{
+          "type":"string",
+          "values":[
+            "calendar-weekday",
+            "calendar-datetime",
+            "sequence"
+          ]
+        },
+        "isPublished":"bool",
+        "Activities":{
+          "type":"array",
+          "verb":"1:n | contains",
+          "items":{
+            "id":"string",
+            "position":"number"
+          }
+        }
+      },
+      "seniors":{
+        "id":"string",
+        "userName":"string",
+        "Itineraries":{
+          "type":"array",
+          "verb":"1:n | subscribedTo",
+          "items":{
+            "id":"string",
+            "runId":"string"
+          }
+        },
+        "ItineraryRuns":{
+          "type":"array",
+          "verb":"1:n | watched",
+          "items":{
+            "id":"string",
+            "itineraryId":"string",
+            "startedAt":"integer",
+            "Activities":{
+              "type":"array",
+              "verb":"1:n | contains"
+            }
+          }
+        }
+      }
+    },
+    "coordinates":{
+      "seniors":[
+        254,
+        323
+      ],
+      "itineraries":[
+        622,
+        133
+      ],
+      "activities":[
+        747,
+        436
+      ]
+    }
+  },
+  {
+    "id":"2",
+    "name":"Coach",
+    "schema":{
+      "scripts":{
+        "id":"string",
+        "title":"string",
+        "createdAt":"number",
+        "updatedAt":"number",
+        "Questions":{
+          "type":"array",
+          "items":{
+            "id":"string",
+            "value":"string",
+            "position":"number"
+          }
+        },
+        "Options":{
+          "type":"array",
+          "items":{
+            "id":"string",
+            "questionId":"string",
+            "value":"string",
+            "position":"number"
+          }
+        }
+      },
+      "conversations":{
+        "id":"string",
+        "userId":"string",
+        "scriptId":"string",
+        "createdAt":"number",
+        "updatedAt":"number",
+        "Answers":{
+          "type":"array",
+          "items":{
+            "questionId":"string",
+            "optionId":"string"
+          }
+        }
+      }
+    }
+  },
+  {
+    "id":"3",
+    "name":"Evolution Model",
+    "schema":{
+      "Software concept":{
+
+      },
+      "Preliminary Requirement Analysys":{
+
+      },
+      "Design of Architecture and system core":{
+
+      },
+      "Develop a version":{
+
+      }
+    }
+  }
+]

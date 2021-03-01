@@ -1,4 +1,4 @@
-/* eslint-disable unicorn/no-null,unicorn/prevent-abbreviations */
+/* eslint-disable unicorn/prevent-abbreviations */
 
 const debug = require("debug")("probable-spoon:UIInput")
 

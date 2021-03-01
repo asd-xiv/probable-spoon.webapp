@@ -1,4 +1,4 @@
-const debug = require("debug")("asd14:Redux")
+const debug = require("debug")("probable-spoon:Redux")
 
 import { createStore, combineReducers } from "redux"
 
@@ -10,7 +10,7 @@ import {
   useCommandsRedux,
 } from "@asd14/react-hooks"
 
-import { TodosList } from "./page.home/data/list.todos"
+import { SchemasList } from "./page.home/data/list.schemas"
 
 const appReducer = combineReducers({
   [useSocketRedux.STORE_KEY]: useSocketRedux.reducer,
@@ -19,7 +19,7 @@ const appReducer = combineReducers({
   [useThemeRedux.STORE_KEY]: useThemeRedux.reducer,
   [useCommandsRedux.STORE_KEY]: useCommandsRedux.reducer,
 
-  [TodosList.name]: TodosList.reducer,
+  [SchemasList.name]: SchemasList.reducer,
 })
 
 // Provide `appReducer` undefined as `state` param to force revert to default

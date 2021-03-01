@@ -1,0 +1,24 @@
+.schema-wrapper {
+  width: 100vw;
+  height: 100vh;
+  padding: var(--distancer);
+}
+
+.schema {
+  display: grid;
+
+  width: 100%;
+  height: 100%;
+
+  grid-gap: var(--distancer);
+  grid-template-columns: 20% auto 30%;
+}
+
+.section {
+  border: 2px solid var(--color-unfocused);
+  border-radius: var(--radius);
+}
+
+.section--has-focus {
+  border: 2px solid var(--color-focused);
+}

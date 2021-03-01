@@ -19,7 +19,8 @@ const config = {
     filename: "js/[name].[contenthash].js",
   },
 
-  devtool: IS_PROD ? false : "inline-source-map",
+  // devtool: IS_PROD ? false : "inline-source-map",
+  devtool: "source-map",
 
   module: {
     rules: [

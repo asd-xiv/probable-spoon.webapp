@@ -15,12 +15,14 @@ import localforage from "localforage"
 
 const SCHEMAS_NAMESPACE = "HOME.SCHEMAS"
 
-// localforage.setItem(SCHEMAS_NAMESPACE, [{id: 1, schema: "{}"}])
-
 export const SchemasList = buildList({
   name: SCHEMAS_NAMESPACE,
 
-  read: () => localforage.getItem(SCHEMAS_NAMESPACE),
+  read: () =>
+    pipeP(
+      source => localforage.getItem(source),
+      when(isEmpty, same([{ id: 1, schema: "{}" }]))
+    )(SCHEMAS_NAMESPACE),
 
   update: async (id, { tableId, schema, coordinates }) => {
     const items = await pipeP(

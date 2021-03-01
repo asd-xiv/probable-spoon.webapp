@@ -23,7 +23,7 @@
     "update": "npm-check --update",
     "update-force": "npm-check --update-all",
     "----DEV": "",
-    "start": "webpack serve --mode development",
+    "start": "NODE_ENV=production webpack serve --mode production",
     "----BUILD": "",
     "build:clean": "rm -rf ./dist",
     "build": "npm run build:clean && webpack --mode production",

@@ -1,0 +1,12 @@
+{
+  "libs": [
+    "browser",
+    "react"
+  ],
+  "plugins": {
+    "es_modules": {}
+  },
+  "dontLoad": [
+    "node_modules/**"
+  ]
+}

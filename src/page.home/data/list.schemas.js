@@ -21,7 +21,7 @@ export const SchemasList = buildList({
   read: () =>
     pipeP(
       source => localforage.getItem(source),
-      when(isEmpty, same([{ id: 1, schema: "{}" }]))
+      when(isEmpty, same([{ id: "1", schema: "{}" }]))
     )(SCHEMAS_NAMESPACE),
 
   update: async (id, { tableId, schema, coordinates }) => {

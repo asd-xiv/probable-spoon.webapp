@@ -6,9 +6,9 @@ import {
   useSocketRedux,
   useAuthRedux,
   useFocusRedux,
-  useThemeRedux,
   useCommandsRedux,
 } from "@asd14/react-hooks"
+import { useThemeRedux } from "@asd14/gruvbox-ui"
 
 import { SchemasList } from "./page.home/data/list.schemas"
 

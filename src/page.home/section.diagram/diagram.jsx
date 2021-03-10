@@ -2,7 +2,8 @@ const debug = require("debug")("probable-spoon:DiagramSection")
 
 import React, { useCallback } from "react"
 import PropTypes from "prop-types"
-import { useMemo, useFocus, useTheme } from "@asd14/react-hooks"
+import { useMemo, useFocus } from "@asd14/react-hooks"
+import { useTheme } from "@asd14/gruvbox-ui"
 import {
   push,
   pipe,

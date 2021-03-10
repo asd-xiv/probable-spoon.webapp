@@ -21,7 +21,7 @@ module.exports = (environment, props) => {
       path: path.resolve(__dirname, "dist"),
 
       // Cannot use 'contenthash' when hot reloading is enabled.
-      filename: IS_PROD ? "js/[name].[contenthash].js" : "[name].js",
+      filename: IS_PROD ? "js/[name].[contenthash].js" : "js/[name].js",
     },
 
     devtool: IS_PROD ? false : "inline-source-map",

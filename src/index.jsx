@@ -1,3 +1,8 @@
+// activate debug logging when in development
+if (process.env.NODE_ENV !== "production") {
+  localStorage.setItem("debug", "probable-spoon:*,@asd14/react-hooks:*")
+}
+
 const debug = require("debug")("probable-spoon:Index")
 
 import React from "react"
@@ -9,7 +14,7 @@ import { Provider } from "react-redux"
 import { store } from "./index.redux"
 import { AppRouter } from "./index.router"
 
-import "core.ui/index.css"
+import "./index.css"
 
 setupHTTPProperties({
   baseURL: process.env.API_URL,
@@ -28,8 +33,3 @@ render(
   </Provider>,
   document.querySelector("#react-root")
 )
-
-// activate debug logging when in development
-if (process.env.NODE_ENV !== "production") {
-  localStorage.setItem("debug", "probable-spoon:*,state-list:*")
-}
